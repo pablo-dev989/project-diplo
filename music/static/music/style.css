@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+.header {
+    grid-column: 1 / span 2;
+    background-color: black;
+    color: white;
+    padding: 20px 30px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Menú lateral en escritorio */
+.sidebar {
+    background-color: #000099; /* Azul oscuro */
+    color: white;
+    padding: 20px;
+    min-height: 500px;
+}
+
+.sidebar .menu-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.content {
+    flex: 1;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    margin-bottom: 12px;
+}
+
+.menu-list a {
+    color: white;
+    text-decoration: underline;
+}
+
+.main-content {
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.section-artistas, .section-albumes {
+    flex: 1;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    background-color: #90ee90;
+    margin-bottom: 8px;
+    padding: 6px 12px;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 2px dashed green;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+}
+
+.footer {
+    grid-column: 1 / span 2;
+    background-color: #ff8c00;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.footer a {
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header, .sidebar, .main-content, .footer {
+        grid-column: 1;
+    }
+
+    .sidebar {
+        min-height: auto;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .sidebar .menu-title {
+        margin-bottom: 0;
+    }
+
+    .menu-list {
+        display: flex;
+        gap: 20px;
+    }
+
+    .menu-list li {
+        margin-bottom: 0;
+    }
+
+    .main-content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .section-artistas, .section-albumes {
+        width: 100%;
+    }
+}

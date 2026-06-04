@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{# Esto permite cargar las reglas CSS desde el archivo style.css #}
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}?v=1.1">
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <header class="header">
+            <h1>Music App</h1>
+        </header>
+
+        <aside class="sidebar">
+            <span class="menu-title">Menú</span>
+            <ul class="menu-list">
+                <li>- <a href="#">Artistas</a></li>
+                <li>- <a href="#">Álbumes</a></li>
+                <li>- <a href="#">Conciertos</a></li>
+                <li>- <a href="#">Videos</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="section-artistas">
+                <h2>Artistas</h2>
+                <ol>
+                    <li>Los Jaivas</li>
+                    <li>Red Hot Chili Peppers</li>
+                    <li>Los Prisioneros</li>
+                    <li>Slayer</li>
+                    <li>The Beatles</li>
+                    <li>Los Tres</li>
+                    <li>Black Sabbath</li>
+                    <li>Luis Jara</li>
+                    <li>Led Zeppelin</li>
+                    <li>La Ley</li>
+                </ol>
+            </div>
+
+            <div class="section-albumes">
+                <h2>Álbumes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Artista</th>
+                            <th>Álbum</th>
+                            <th>Año</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">Los Jaivas</td>
+                            <td>El Indio</td>
+                            <td>1975</td>
+                        </tr>
+                        <tr>
+                            <td>Alturas de Machu Picchu</td>
+                            <td>1981</td>
+                        </tr>
+                        <tr>
+                            <td>Obras de Violeta Parra</td>
+                            <td>1984</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Red Hot Chili Peppers</td>
+                            <td>Blood Sugar Sex Magik</td>
+                            <td>1991</td>
+                        </tr>
+                        <tr>
+                            <td>Californication</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>Stadium Arcadium</td>
+                            <td>2006</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <p>Copyright © Python y la Web, 2020. Más información en la página de Clase Ejecutiva.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
