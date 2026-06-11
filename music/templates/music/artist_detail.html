@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Estas viendo a: {{artist.name}}</h1>
+    <ol>
+        {% for album in artist.album_set.all %}
+        <li>{{ album.name }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
