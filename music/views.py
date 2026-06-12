@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 
+from music.forms import ArtistForm
 from music.models import Artist
 
 
@@ -14,5 +15,11 @@ def index(request):
 
 def artist_detail(request, artist_id):
     artist = Artist.objects.get(id=artist_id)
-    context = {'artist': artist}
+    if request.method == "POST":
+        form = ArtistForm(request.POST, instance=artist)
+        if form.is_valid():
+            artist = form.save()
+    else:
+        form = ArtistForm(instance=artist)
+    context = {'artist': artist, 'form': form}
     return render(request, 'music/artist_detail.html', context)
